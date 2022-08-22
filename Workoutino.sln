@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32611.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workoutino", "Workoutino\Workoutino.csproj", "{6A9699F7-0952-42EF-A977-DBC51F03B8CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workoutino.Api", "Workoutino.Api\Workoutino.Api.csproj", "{D451AACF-A3A3-480B-A55B-87A7157998F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workoutino.Api", "Workoutino.Api\Workoutino.Api.csproj", "{D451AACF-A3A3-480B-A55B-87A7157998F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workoutino.App", "Workoutino.App\Workoutino.App.csproj", "{70EE9712-16DC-4907-A366-F29523C5373A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{D451AACF-A3A3-480B-A55B-87A7157998F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D451AACF-A3A3-480B-A55B-87A7157998F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D451AACF-A3A3-480B-A55B-87A7157998F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EE9712-16DC-4907-A366-F29523C5373A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EE9712-16DC-4907-A366-F29523C5373A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EE9712-16DC-4907-A366-F29523C5373A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{70EE9712-16DC-4907-A366-F29523C5373A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EE9712-16DC-4907-A366-F29523C5373A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EE9712-16DC-4907-A366-F29523C5373A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

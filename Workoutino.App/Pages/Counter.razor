@@ -1,99 +1,98 @@
 ﻿@page "/counter"
 @using Radzen
 @using Radzen.Blazor
-
 <div class="row my-5">
-
-    <div class="col">
-        <RadzenFieldset AllowCollapse="true">
-            <HeaderTemplate>
-                <RadzenDropDown Multiple="true" Chips="true" MaxSelectedLabels="20" AllowClear="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" Data=@exercises @bind-Value=@multipleValuesChip
-                                TextProperty="Name" ValueProperty="Id" Class="w-100" />
-            </HeaderTemplate>
-            <ChildContent>
-                <div class="row">
-                    <div class="col-lg-2">
-                        <RadzenCard class="m-3">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    @*<span style="display: inline"><b>Reps</b> <RadzenButton Icon="add_circle_outline" ButtonStyle="ButtonStyle.Primary" /></span>*@
-                                    <b>Reps</b>
-                                    <div class="mt-3" contenteditable="true">7</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Weight</b>
-                                    <div class="mt-3" contenteditable="true">99kg</div>
-                                </div>
-                            </div>
-                        </RadzenCard>
-                    </div>
-                    <div class="col-lg-2">
-                        <RadzenCard class="m-3">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <b>Reps</b>
-                                    <div class="mt-3" contenteditable="true">7</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Weight</b>
-                                    <div class="mt-3" contenteditable="true">99kg</div>
-                                </div>
-                            </div>
-                        </RadzenCard>
-                    </div>
-                    <div class="col-lg-2">
-                        <RadzenCard class="m-3">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <b>Reps</b>
-                                    <div class="mt-3" contenteditable="true">7</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Weight</b>
-                                    <div class="mt-3" contenteditable="true">99kg</div>
-                                </div>
-                            </div>
-                        </RadzenCard>
-                    </div>
-                    <div class="col-lg-2">
-                        <RadzenCard class="m-3">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <b>Reps</b>
-                                    <div class="mt-3" contenteditable="true">7</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Weight</b>
-                                    <div class="mt-3" contenteditable="true">99kg</div>
-                                </div>
-                            </div>
-                        </RadzenCard>
-                    </div>
-                    <div class="col-lg-2">
-                        <RadzenCard class="m-3">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <b>Reps</b>
-                                    <div class="mt-3" contenteditable="true">7</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Weight</b>
-                                    <div class="mt-3" contenteditable="true">99kg</div>
-                                </div>
-                            </div>
-                        </RadzenCard>
-                    </div>
+    <nav id="navbar-example2" class="navbar bg-light px-3 mb-3">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading1">First</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#monday">Monday</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#monday">Monday</a></li>
+                    <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    @*<BSButton>Add day</BSButton>*@
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
+        <h3 id="monday">Monday</h3>
+        @for (int x = 1; x < 7; x++)
+        {
+            <div>
+                <div>
+                    <h4>
+                        @foreach (var exercise in selectedExercises)
+                        {
+                            <span class="badge text-bg-primary bg-primary mr-3">@exercises.FirstOrDefault(c => c.Id == exercise)?.Name</span>
+                        }
+                    </h4>
+                    @* <RadzenDropDown AllowClear="true" TValue="string" AllowVirtualization="true" Class="w-100"
+                AllowFiltering="true" Data=@exercises TextProperty="Name" ValueProperty="Id"
+                Change=@(args => selectedExercises.Add((int)args)) />*@
                 </div>
-            </ChildContent>
+                <div class="row">
+                    @foreach (var exercise in exercises)
+                    {
+                        <div class="col" style="padding: 0px 2px 0px 0px">
 
-        </RadzenFieldset>
+                            <div class="card text-bg-light mb-3" style="width: 12rem;">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger zindex-dropdow">
+                                    @exercise.Id
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                                <div class="card-body" style="padding: 4px">
+                                    <table class="table table-sm table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Weight</th>
+                                                <td>100kg</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Reps</th>
+                                                <td>4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        <h4 id="scrollspyHeading2">Second heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading3">Third heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading4">Fourth heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading5">Fifth heading</h4>
+        <p>...</p>
     </div>
+    
+
+
 </div>
 
 
+
 @code {
+
+    private BSPopover bSPopover;
+
     bool disabled = true;
     IEnumerable<Exercise> exercises;
+    IList<int> selectedExercises = new List<int>() { 1, 2, 3 };
     MyObject myModel = new MyObject();
     MyObject myModelDisabled = new MyObject();
 
@@ -105,6 +104,17 @@
     IEnumerable<int> multipleValuesdisabled = new int[] { 1, 2 };
 
     IEnumerable<int> multipleValuesChip = new int[] { 1 };
+
+    private async Task ShowPopover(string target, string content, Placement placement)
+    {
+        await bSPopover.ToggleAsync(target, content, placement, "Dynamic");
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        Console.WriteLine(string.Join(", ", exercises.Select(e => e.Name)));
+    }
 
 
     protected override void OnInitialized()
@@ -120,8 +130,48 @@
             {
                 Id = 2,
                 Name = "Clean"
+            },
+              new Exercise
+            {
+                Id = 3,
+                Name = "|D"
+            },
+              new Exercise
+            {
+                Id = 4,
+                Name = "SSS"
+            },
+              new Exercise
+            {
+                Id = 5,
+                Name = "ZZZan"
+            },
+              new Exercise
+            {
+                Id = 6,
+                Name = "ZZZan"
+            },
+              new Exercise
+            {
+                Id = 7,
+                Name = "ZZZddddan"
+            },
+              new Exercise
+            {
+                Id = 8,
+                Name = "ZZZssssan"
+            },
+              new Exercise
+            {
+                Id = 9,
+                Name = "ZZZdddn"
             }
     };
+    }
+
+    public void DoStuff(EventArgs e)
+    {
+        Console.WriteLine(string.Join(", ", exercises.Select(e => e.Name)));
     }
 
     class MyObject

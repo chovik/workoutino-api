@@ -119,4 +119,4 @@ namespace Workoutino.Api.Infrastracture.EntityFramework.Extensions
     }
 
 }
-}
+

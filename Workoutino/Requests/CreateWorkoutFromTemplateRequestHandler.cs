@@ -25,19 +25,4 @@ namespace Workoutino.Requests
         public int SourceWorkoutId { get; }
         public IReadOnlyCollection<ExerciseRepetitionMaximum> RepetitionsMaximums { get; }
     }
-
-    public class CreateWorkoutFromTemplateRequestHandler
-    {
-        public Task HandleAsync(CreateWorkoutFromTemplateRequest request)
-        {
-
-        }
-
-        Task<WorkoutTemplate> GetWorkoutTemplate(int templateId)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Workout>
-    }
 }

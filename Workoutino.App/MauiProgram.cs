@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+﻿using BlazorStrap;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 using Workoutino.App.Data;
 
 namespace Workoutino.App
@@ -16,8 +17,9 @@ namespace Workoutino.App
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddBlazorStrap();
 #if DEBUG
-		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 
             builder.Services.AddSingleton<WeatherForecastService>();

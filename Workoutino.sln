@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workoutino", "Workoutino\Wo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workoutino.Api", "Workoutino.Api\Workoutino.Api.csproj", "{D451AACF-A3A3-480B-A55B-87A7157998F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workoutino.App", "Workoutino.App\Workoutino.App.csproj", "{70EE9712-16DC-4907-A366-F29523C5373A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workoutino.App", "Workoutino.App\Workoutino.App.csproj", "{70EE9712-16DC-4907-A366-F29523C5373A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

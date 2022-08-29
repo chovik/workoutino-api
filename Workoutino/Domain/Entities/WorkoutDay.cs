@@ -7,6 +7,6 @@ namespace Workoutino.Domain.Entities
     public class WorkoutDay
     {
         public DateTime Day { get; set; }
-        prop
+
     }
 }

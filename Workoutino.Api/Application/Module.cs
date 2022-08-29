@@ -42,7 +42,7 @@ namespace Workoutino.Api.Application
                     throw new BadHttpRequestException($"Workout exercise with id = {id} does not exist.");
                 }
 
-                workoutExercise.AddSet(new WorkoutSet())
+                //workoutExercise.AddSet(new WorkoutSet());
 
                 await mediator.CreateEntity(workoutExercise, cancellationToken);
             });
